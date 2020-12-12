@@ -18,10 +18,10 @@ function request(i, end)
     }
   });
   
-  promise.then(() => processResponse(i)).catch(console.log);
+  promise.then(() => processResponse(i, end)).catch(console.log);
 }
 
-function processResponse(i){
+function processResponse(i, end){
   console.log(i);
-  request(i++);
+  request(i++, end);
 }
