@@ -5,7 +5,7 @@ const axios = require('axios');
 function request(i, end)
 {
   if(i >= end){
-    break;
+    return;
   }
   
   const promise = axios({
