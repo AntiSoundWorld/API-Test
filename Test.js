@@ -9,7 +9,7 @@ while(i != 100);
 
 const axios = require('axios');
 
-function request(i)
+function request(i, end)
 {
   const promise = axios({
     method: 'post',
@@ -25,6 +25,6 @@ function request(i)
 }
 
 function processResponse(i){
-  request(i)
   console.log(i)
+  request(i)
 }
