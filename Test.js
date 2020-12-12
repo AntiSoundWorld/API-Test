@@ -25,5 +25,6 @@ function request(i)
 }
 
 function processResponse(i){
+  request(i)
   console.log(i)
 }
