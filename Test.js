@@ -1,6 +1,6 @@
-request(0, 1000);
-
 const axios = require('axios');
+
+request(0, 1000);
 
 function request(i, end)
 {
