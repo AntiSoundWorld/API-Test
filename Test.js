@@ -1,16 +1,16 @@
-let i = 0;
-do
-{
- 
-  i++
-
-}
-while(i != 100);
+request(0, 1000);
 
 const axios = require('axios');
 
 function request(i, end)
 {
+  if(i >= end){
+    break;
+  }
+  
+  
+  done
+
   const promise = axios({
     method: 'post',
     url: 'http://127.0.0.1:8090/tasks',
@@ -25,6 +25,6 @@ function request(i, end)
 }
 
 function processResponse(i){
-  console.log(i)
-  request(i)
+  console.log(i);
+  request(i);
 }
