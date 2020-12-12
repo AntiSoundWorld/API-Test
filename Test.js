@@ -8,9 +8,6 @@ function request(i, end)
     break;
   }
   
-  
-  done
-
   const promise = axios({
     method: 'post',
     url: 'http://127.0.0.1:8090/tasks',
