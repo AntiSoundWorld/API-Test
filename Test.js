@@ -8,17 +8,18 @@ do
   const req = http.request({
     method: 'POST',
     http: '1.1',
-    port: 8090,
     path: '/tasks',
+    host: '127.0.0.1',
+    port: 8090,
     headers: 
     {
       'Content-length': '48',
       'Content-type': 'application/json',
       'Connection': 'close',
       'Host': '127.0.0.1:8090',
-      'accept': '*/*\r\n\r\n',
+      'accept': '*/*',
     },
-    
+    '\r\n':'\r\n',
     body:
     {
       'name:': 'Dmitry',
