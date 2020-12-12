@@ -1,48 +1,29 @@
-const http = require('http');
-const { url } = require('inspector');
-
 let i = 0;
-
 do
 {
-  const req = http.request({
-    method: 'POST',
-    http: '1.1',
-    path: '/tasks',
-    host: '127.0.0.1',
-    port: 8090,
-    headers: 
-    {
-      'Content-length': '48',
-      'Content-type': 'application/json',
-      'Connection': 'close',
-      'Host': '127.0.0.1:8090',
-      'accept': '*/*',
-    },
-    '\r\n':'\r\n',
-    body:
-    {
-      'name:': 'Dmitry',
-      'id:': '0',
-      'lastname:': 'Ivanov'
+ 
+  i++
+
+}
+while(i != 100);
+
+const axios = require('axios');
+
+function request(i)
+{
+  const promise = axios({
+    method: 'post',
+    url: 'http://127.0.0.1:8090/tasks',
+    data: {
+      firstName: 'Fred',
+      id: i,
+      lastName: 'Flintstone'
     }
   });
-
-    req.on('response', function(response){
-      let body = '';
-
-      response.on('data', function(chunk){
-        body += chunk;
-      });
-
-      response.on('end', function(){
-        console.info(body);
-      });
-    });
-
-    req.end();
-
-    i++
+  
+  promise.then(() => processResponse(i)).catch(console.log);
 }
-while(i != 1000);
 
+function processResponse(i){
+  console.log(i)
+}
